@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Shop — Koverbalprod</title>
+  <meta name="description" content="Merch officiel Koverbalprod. Shop intégré via Spreadshop." />
+  <link rel="canonical" href="https://koverbalprod.com/shop/" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body class="preload">
+  <a class="skip" href="#main">Aller au contenu</a>
+  <div data-nav></div>
+
+  <header class="wrap" style="padding-top: 18px;">
+    <p class="eyebrow">MERCH</p>
+    <h1 class="page-title">Shop</h1>
+    <p class="page-lead">Merch officiel Koverbalprod. Si l’embed ne charge pas, ouvre le shop dans un nouvel onglet.</p>
+  </header>
+
+  <main id="main" class="wrap">
+    <section class="card">
+      <div class="card-head">
+        <h2>Spreadshop</h2>
+        <span class="card-kicker">Intégré</span>
+      </div>
+
+      <div class="hero-cta" style="padding:0; margin-bottom: 14px;">
+        <a class="btn primary" target="_blank" rel="noopener noreferrer" href="https://koverbalprod.myspreadshop.fr">Ouvrir le shop</a>
+        <a class="btn ghost" href="/contact/">Contact</a>
+      </div>
+
+      <div class="shop-shell">
+        <div id="myShop">
+          <a href="https://koverbalprod.myspreadshop.fr">koverbalprod</a>
+        </div>
+      </div>
+
+      <script>
+        var spread_shop_config = {
+          shopName: 'koverbalprod',
+          locale: 'fr_FR',
+          prefix: 'https://koverbalprod.myspreadshop.fr',
+          baseId: 'myShop'
+        };
+      </script>
+
+      <script
+        type="text/javascript"
+        src="https://koverbalprod.myspreadshop.fr/shopfiles/shopclient/shopclient.nocache.js">
+      </script>
+
+    </section>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <img class="footer-logo" src="/koverbalprod-logo.jpg" alt="Koverbalprod" />
+          <div>
+            <p class="footer-title">Koverbalprod</p>
+            <p class="footer-sub">Label / Production / Rap — « Le crew qui percute le crom »</p>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="/ecouter/">Écouter</a>
+          <a href="/playlists/">Playlists</a>
+          <a href="/artistes/">Artistes</a>
+          <a href="/contact/">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="/nav.js" defer></script>
+  <script>
+    window.addEventListener('load', () => document.body.classList.remove('preload'));
+  </script>
+</body>
+</html>
