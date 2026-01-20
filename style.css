@@ -772,26 +772,29 @@ body.preload .hero{
   align-items: center;
 }
 
+/* ===== FINAL FINAL : logos qui remplissent le carré ===== */
+.roster .artist-card{
+  align-items: center;
+}
+
 .roster .artist-card .artist-avatar{
   width: 72px !important;
   height: 72px !important;
   border-radius: 16px !important;
-  display: grid !important;
-  place-items: center !important;
   overflow: hidden !important;
-  background: rgba(0,0,0,.35) !important;
+  background: #111 !important;
   flex: 0 0 72px !important;
+
+  display: block !important;
 }
 
 .roster .artist-card .artist-avatar img{
   width: 100% !important;
   height: 100% !important;
-  display: block !important;
-  object-fit: contain !important;
+
+  /* 🔥 LA CLÉ */
+  object-fit: cover !important;
   object-position: center center !important;
 
-  /* MOINS de vide + logo plus présent */
-  padding: 6px !important;
-  transform: scale(1.25) !important;
-  transform-origin: center !important;
+  display: block !important;
 }
