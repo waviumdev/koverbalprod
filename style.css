@@ -716,3 +716,17 @@ body.preload .hero{
 .page-title{ margin: 0 0 6px; }
 .page-lead{ margin: 0; color: var(--muted); }
 
+
+
+/* Artist logos in roster cards */
+.artist-avatar.img{
+  background: rgba(255,255,255,.02);
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+}
+.artist-avatar.img img{
+  width: 92px;
+  height: 44px;
+  object-fit: contain;
+  display: block;
+}

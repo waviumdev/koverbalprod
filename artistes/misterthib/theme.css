@@ -1,0 +1,15 @@
+:root{
+  --gold: #d83a3a;
+  --gold2: #ffb3b3;
+  --ring: 0 0 0 4px rgba(216,58,58,0.18);
+}
+
+/* Accent déco (Mister Thib) */
+.rasta-bar{
+  height: 6px;
+  border-radius: 999px;
+  margin-top: 10px;
+  width: min(360px, 100%);
+  background: linear-gradient(90deg, #0aa84f 0%, #f2d200 50%, #d81f26 100%);
+  opacity: .9;
+}
