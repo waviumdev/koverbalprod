@@ -82,6 +82,75 @@
   <script type="text/javascript"
   src="https://koverbalprod.myspreadshop.fr/shopfiles/shopclient/shopclient.nocache.js">
 </script>
+<script>
+(() => {
+  const root = document.getElementById("myShop");
+  if (!root) return;
 
+  const HOME_HASHES = new Set(["", "#!/", "#/", "#!/shop", "#/shop"]);
+  const needles = [
+    "La confiance n’est pas une chimère",
+    "Des produits hors du commun",
+    "Un partenaire expérimenté",
+    "Votre satisfaction, notre priorité",
+    "Nos produits",
+    "Créez quelque chose d’aussi unique que vous",
+    "Lancez-vous"
+  ];
+
+  const norm = (s) => (s || "")
+    .replace(/\u00A0/g, " ")
+    .replace(/[’']/g, "'")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLowerCase();
+
+  const needlesN = needles.map(norm);
+
+  function isHome() {
+    // Spreadshop embed utilise souvent /shop/#!/ ...
+    const h = (location.hash || "").trim();
+    return HOME_HASHES.has(h) || h.startsWith("#!/");
+  }
+
+  function hideMarketing() {
+    if (!isHome()) return;
+
+    // 1) cacher les blocs qui contiennent ces textes
+    const candidates = root.querySelectorAll("section, div, main, article");
+    candidates.forEach(el => {
+      const t = norm(el.innerText);
+      if (!t) return;
+      if (needlesN.some(n => t.includes(n))) {
+        // on remonte jusqu'à un bloc "raisonnable" (pas tout #myShop)
+        let target = el;
+        for (let i = 0; i < 4 && target.parentElement && target.parentElement !== root; i++) {
+          target = target.parentElement;
+        }
+        target.style.display = "none";
+      }
+    });
+
+    // 2) cacher les tuiles catégories qui ont "Tous les produits"
+    root.querySelectorAll("a").forEach(a => {
+      if (norm(a.textContent) === norm("Tous les produits")) {
+        let tile = a;
+        for (let i = 0; i < 6 && tile.parentElement && tile.parentElement !== root; i++) {
+          tile = tile.parentElement;
+        }
+        tile.style.display = "none";
+      }
+    });
+  }
+
+  // Run + keep running when Spreadshop injecte du contenu
+  hideMarketing();
+  const obs = new MutationObserver(hideMarketing);
+  obs.observe(root, { childList: true, subtree: true });
+
+  // Et quand la SPA change de hash
+  window.addEventListener("hashchange", () => setTimeout(hideMarketing, 50));
+})();
+</script>
 </body>
 </html>
