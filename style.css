@@ -11,8 +11,9 @@
   --text:#f2f2f4;
   --muted: rgba(242,242,244,0.72);
 
-  --gold:#c7c0b2;
-  --gold2:#f2eee6;
+  --gold:  #9ca3af;  /* métal mid */
+  --gold2: #e5e7eb;  /* reflet clair */
+
 
   --shadow: 0 20px 60px rgba(0,0,0,0.50);
   --shadow2: 0 10px 30px rgba(0,0,0,0.35);
@@ -557,6 +558,17 @@ h2::before{
   color: rgba(242,242,244,0.55);
   font-size: 14px;
   text-align: center;
+}
+
+.footer-logo {
+  width: 40px;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .footer-logo {
+    width: 48px;
+  }
 }
 
 /* Toggles */
