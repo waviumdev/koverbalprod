@@ -759,7 +759,7 @@ body.preload .hero{
   padding: 10px;
 
   /* léger zoom pour éviter l'effet "tout petit" */
-  transform: scale(1.12);
+  transform: scale(1.32);
   transform-origin: center;
 }
 
